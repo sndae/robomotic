@@ -8,7 +8,7 @@ How do you calculate the actual g values from the 3 axis ADC?
 
 
 = Matlab code =
-
+{{{
 The MCU works with a supply of 5V
 Vcc=5
 The gmax declared on the ADXL is +-2g
@@ -25,3 +25,4 @@ xa[2] is 1g
 xa[3] is -1g
 So we run our little function
 [gval,voltage]=adc2g(xa,avg,adc_res,acc_res)
+}}}
