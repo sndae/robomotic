@@ -1,3 +1,4 @@
+#labels Featured,Phase-Implementation
 #Some Matlab code for ADC conversion of Accelerometers
 
 = Introduction =
@@ -24,4 +25,18 @@ xa[2] is 1g
 xa[3] is -1g
 So we run our little function
 [gval,voltage]=adc2g(xa,avg,adc_res,acc_res)
+
+
+gval =
+
+     0
+     1
+    -1
+
+
+voltage =
+
+         0
+    1.2500
+   -1.2500
 }}}
