@@ -1,0 +1,9 @@
+Vcc=5
+gMax=2
+adc_res=Vcc/1024;
+acc_res=Vcc/(2*gMax);
+
+%% what we should expect from the ADXL in a flat position
+xa=[512;512+1024/4;1024/4]
+avg=512;
+[gval,voltage]=adc2g(xa,avg,adc_res,acc_res)
