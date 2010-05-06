@@ -9,8 +9,13 @@ JEMMA:
   *LENGTH: 9.6 CM
   *HEIGHT: 1.5 CM
   *WIDTH: 2.1 CM
+[http://lab.robomotic.com/images/Dimensions/DSCF7765.JPG]
+[http://lab.robomotic.com/images/Dimensions/DSCF7766.JPG]
 
 ROOMBOARD:
   *LENGTH: 8.1 CM
   *HEIGHT: 2.3 CM
   *WIDTH: 3.3 CM
+
+
+[http://code.google.com/ http://code.google.com/images/code_sm.png]
