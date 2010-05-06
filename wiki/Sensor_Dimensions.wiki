@@ -3,7 +3,8 @@
 = Dimensions =
 
 There are 2 types of sensor nodes at the moment.
-[http://lab.robomotic.com/index.php?option=com_content&view=section&layout=blog&id=5&Itemid=53]
+[
+http://lab.robomotic.com/index.php?option=com_content&view=section&layout=blog&id=5&Itemid=53]
 
 
 JEMMA:
