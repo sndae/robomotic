@@ -1,4 +1,5 @@
 #summary Specs of the home sensor network
+#labels Featured
 = Introduction =
 
 Data format for the house telemetry
