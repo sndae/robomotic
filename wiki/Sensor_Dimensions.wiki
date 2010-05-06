@@ -6,11 +6,11 @@ There are 2 sensor nodes.
 
 
 JEMMA:
-LENGTH: 9.6 CM
-HEIGHT: 1.5 CM
-WIDTH: 2.1 CM
+  *LENGTH: 9.6 CM
+  *HEIGHT: 1.5 CM
+  *WIDTH: 2.1 CM
 
 ROOMBOARD:
-LENGTH: 8.1 CM
-HEIGHT: 2.3 CM
-WIDTH: 3.3 CM
+  *LENGTH: 8.1 CM
+  *HEIGHT: 2.3 CM
+  *WIDTH: 3.3 CM
