@@ -1,0 +1,22 @@
+#summary One-sentence summary of this page.
+Specs of the home sensor network
+= Introduction =
+
+Data format for the house telemetry
+
+
+= Details =
+
+The data sample from a sensor node is composed by:
+* ID:integer[0-254]
+* The full payload format is structured as:
+
+{{{
+struct {
+    byte light;     // light sensor
+    byte moved :1;  // motion detector
+    byte humi  :7;  // humidity
+    int temp   :10; // temperature
+    byte lobat :1;  // supply voltage dropped under 3.1V
+} payload;
+}}}
