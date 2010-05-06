@@ -2,7 +2,9 @@
 
 = Dimensions =
 
-There are 2 sensor nodes:
+There are 2 sensor nodes.
+
+
 JEMMA:
 LENGTH: 9.6 CM
 HEIGHT: 1.5 CM
