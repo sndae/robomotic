@@ -1,5 +1,4 @@
-#summary One-sentence summary of this page.
-Specs of the home sensor network
+#summary Specs of the home sensor network
 = Introduction =
 
 Data format for the house telemetry
@@ -8,15 +7,46 @@ Data format for the house telemetry
 = Details =
 
 The data sample from a sensor node is composed by:
-* ID:integer[0-254]
-* The full payload format is structured as:
+{{{
+struct {
+    byte ID;
+    byte TYPE;
+    payload;     
+} packet;
+}}}
+
+Well there's also a byte for the group but that one is not required.
+The type basically define the payload structure:
+{{{
+TYPE:
+#define ALARM 0x01
+#define TELEMETRY 0x02
+#define INERTIAL 0x04
+}}}
+The full payload format for a telemetry node is structured as:
 
 {{{
 struct {
-    byte light;     // light sensor
-    byte moved :1;  // motion detector
-    byte humi  :7;  // humidity
-    int temp   :10; // temperature
+    byte light;     // light sensor SHT11
+    byte moved :1;  // motion detector for the EPIR
+    byte humi  :7;  // humidity from the SHT11
+    int temp   :10; // temperature from the SHT11
+    int pressure :32; //pressure from the bmp085
     byte lobat :1;  // supply voltage dropped under 3.1V
 } payload;
 }}}
+Telemety nodes can update in quasi real time (consumes a lot of energy) or in diff mode (lowe power). The first mode is a periodic sampling whereas the second mode only send packets when one of the sensor has changed.
+Also every node has a subset of the payload data but every node has a lobat indicator (1 bit).
+
+An inertial node has a different payload:
+
+{{{
+struct {
+  byte Xraw:10;
+  byte Yraw:10;
+  byte Zraw:10;
+  byte RESOLUTION: 4;
+  byte SAMP: 8;
+} payload;
+}}}
+every axis is an 10 bit integer.
