@@ -5,8 +5,9 @@
 
 This document describes the data format for biological signals
 Terminology:
-EEG= 
-ECG=
+EEG= Electroencephalography
+ECG= Electrocardiography
+MYO= Myography
 
  
 = Data labeling =
@@ -15,8 +16,10 @@ Every recording session should contain:
   # Type of recording
   # Type of task
   # Type of device used
+  # Properties of the device used like number of channels, sensibility etc.
   # Timestamp and session duration
-  # Accesss token
+  # Access token
+  # Link to related datasets
   # Privacy agreement  
 
 = Details =
