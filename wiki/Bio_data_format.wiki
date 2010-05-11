@@ -1,14 +1,41 @@
 #summary Format for bio data exchange
+#labels Featured
 
 = Introduction =
 
 This document describes the data format for biological signals
 Terminology:
-  
+EEG= 
+ECG=
+
+ 
+= Data labeling =
+Every recording session should contain:
+  # Subject name
+  # Type of recording
+  # Type of task
+  # Type of device used
+  # Timestamp and session duration
+  # Accesss token
+  # Privacy agreement  
 
 = Details =
+The data format for the brain waves follows:
+{{{
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+struct BrainPacket
+{
+byte signal_strength,
+byte attention,
+byte meditation,
+int delta,
+int theta,
+int low alpha, 
+int high alpha,
+int low beta, 
+int high beta, 
+int low gamma, 
+int high gamma
+
+}
+}}}
