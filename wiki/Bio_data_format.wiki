@@ -5,9 +5,11 @@
 
 This document describes the data format for biological signals
 Terminology:
-EEG= Electroencephalography
-ECG= Electrocardiography
-MYO= Myography
+  # EEG= Electroencephalography
+  # ECG= Electrocardiography
+  # MYO= Myography
+  # Polar= Polar rate signal
+  # EOG= electro-oculographic 
 
  
 = Data labeling =
@@ -23,7 +25,7 @@ Every recording session should contain:
   # Privacy agreement  
 
 = Details =
-The data format for the brain waves follows:
+The data format for every channel follows:
 {{{
 
 struct BrainPacket
