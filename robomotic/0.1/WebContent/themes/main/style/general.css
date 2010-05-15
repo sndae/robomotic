@@ -1,0 +1,48 @@
+.clear {
+	clear: both;
+}
+
+.login .label, .login .value {
+	float: left;
+    padding-bottom: 5px;
+}
+
+.login .label {
+	display: inline;
+	width: 7em;
+	
+}
+
+.login .value {
+	display: block;
+}
+
+.login .error {
+	font-size: 13pt;
+	color: red;
+}
+
+.login .header {
+	margin: 3em;
+	font-weight: bold;
+}
+
+
+.language, .logout {
+	display: inline;
+	float: right;
+	margin-bottom: 10px;
+}
+
+.language ul {
+	list-style-type: none;
+	margin: 0px 1em;
+	padding: 0px;
+}
+
+.language ul li {
+	display: inline;
+	float: left;
+	list-style: none;
+	margin: 0px 0.2em;
+}

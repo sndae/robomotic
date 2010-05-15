@@ -1,0 +1,8 @@
+<Context path="/robomotic" docBase="robomotic">
+
+    <Resource name="jdbc/robomotic" auth="Container"
+      type="javax.sql.DataSource" maxActive="100" maxIdle="10" maxWait="5000"
+      username="robomotic" password="R0b0m0t1c" driverClassName="com.mysql.jdbc.Driver"
+      url="jdbc:mysql://localhost:3306/robomotic?autoReconnect=true&amp;characterEncoding=UTF-8"/>     
+
+</Context>
