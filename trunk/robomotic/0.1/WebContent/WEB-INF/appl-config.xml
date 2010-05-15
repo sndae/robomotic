@@ -18,6 +18,10 @@
         </theme>
     </general>
     
+    <sensor-data>
+        <max-queue-length>30</max-queue-length>
+    </sensor-data>
+    
     <persistence>
         <persistence-unit>robomotic</persistence-unit>
     </persistence>
