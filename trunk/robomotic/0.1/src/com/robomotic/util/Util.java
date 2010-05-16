@@ -39,6 +39,39 @@ public class Util {
 	}
 
 	/**
+	 * Utility method to encode users passwords.
+	 *
+	 * @param plainPassword The pplain text password.
+	 * @return The encoded password.
+	 */
+	public static String encodeUserPassword(String plainPassword) {
+		return DigestUtils.md5Hex(plainPassword.getBytes());
+	}
+
+	/**
+	 * Utility method to retrieve a configuration parameter as a
+	 * <code>{@link List}&lt;String&gt;</code>. If the specified
+	 * parameter is a string, this method returns a List containing
+	 * only one item. If the parameter doesn't exists, it returns
+	 * an empty list.
+	 *
+	 * @param paramName The name of the configuration parameter to read.
+	 * @return A <code>{@link List}&lt;String&gt;</code> with the values
+	 * of the parameter as defined in the configuration file.
+	 */
+	public static List<String> getConfigurationParamAsList(String paramName) {
+		List<String> ret = new LinkedList<String>();
+		Object paramValue = ConfigLoader.getInstance().get(paramName);
+		if(paramValue instanceof String) {
+			ret.add((String)paramValue);
+		}
+		else if(paramValue instanceof List) {
+			ret = (List<String>)paramValue;
+		}
+		return ret;
+	}
+
+	/**
 	 * Utility method to retrieve a configuration parameter as a
 	 * string. This method is useful when trying to read a parameter
 	 * value that contains a string with commas.
@@ -51,13 +84,9 @@ public class Util {
 		Object paramValue = ConfigLoader.getInstance().get(paramName);
 		if(paramValue == null) {
 			return null;
-		}
-
-		if(paramValue instanceof String) {
+		} else if(paramValue instanceof String) {
 			return (String) paramValue;
-		}
-
-		if(paramValue instanceof List) {
+		} else if(paramValue instanceof List) {
 			StringBuffer ret = new StringBuffer();
 			boolean first = true;
 			for(Object paramPart : (List) paramValue) {
@@ -118,15 +147,5 @@ public class Util {
 			Util.closeObject(is); is = null;
 		}
 		return ret;
-	}
-
-	/**
-	 * Utility method to encode users passwords.
-	 *
-	 * @param plainPassword The pplain text password.
-	 * @return The encoded password.
-	 */
-	public static String encodeUserPassword(String plainPassword) {
-		return DigestUtils.md5Hex(plainPassword.getBytes());
 	}
 }

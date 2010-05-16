@@ -3,6 +3,7 @@
  */
 package com.robomotic.actions;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.persistence.EntityManager;
@@ -44,6 +45,16 @@ public class GenericAction extends ActionSupport implements ApplicationAware, Se
 		userSessionParam = (String)ConfigLoader.getInstance().get("general.session.user-session");
 		request = ServletActionContext.getRequest();
 		response = ServletActionContext.getResponse();
+	}
+
+	/**
+	 * Returns the list of all configured languages.
+	 *
+	 * @return A list with all configured languages.
+	 */
+	public List<String> getAvailableLanguages() {
+		List<String> ret = Util.getConfigurationParamAsList("general.lang.available-langs");
+		return ret;
 	}
 
 	@Override
