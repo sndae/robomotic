@@ -104,6 +104,8 @@ This URL will accept the following parameters:
   * *data*: The sensors data formatted as a JSON object according to the format defined in previuos section;
   * *sign*: The request sign created as _*MD5(public + nonce + data + secret)*_, where + means string concatanation.
 
+The parameters can be passed with a POST or with a GET HTTP command, indifferently.
+
 As the nonce changes between each call and must be an incremental number, each request will be different, preventing replay attacks, and it will have a different sign.
 
 Moreover, the secret key, shared between the coordinator and the server, will never be clearly transmitted over the network, so an attacher can very hardly generate a valid sign for a malicious request and the server can be pretty sure that the a request with a correct sign is coming from the coordinator knowing the secret key.
