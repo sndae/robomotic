@@ -33,6 +33,9 @@
             <result name="success" type="redirectAction">
                 <param name="actionName">profile</param>
             </result>
+            <result name="admin" type="redirectAction">
+                <param name="actionName">admin</param>
+            </result>
         </action>
         
         <action name="profile" class="com.robomotic.actions.Profile">
@@ -40,6 +43,13 @@
                 <param name="actionName">login</param>
             </result>
             <result name="success">/WEB-INF/jsp/profile.jsp</result>
+        </action>
+
+        <action name="admin" class="com.robomotic.actions.Administration">
+            <result name="login" type="redirectAction">
+                <param name="actionName">login</param>
+            </result>
+            <result name="success">/WEB-INF/jsp/admin.jsp</result>
         </action>
         
     </package>
