@@ -106,7 +106,9 @@ public class UserStore extends GenericStore {
 			q.setParameter("username", username);
 			q.setParameter("password", Util.encodeUserPassword(password));
 
-			ret = (User)q.getSingleResult();
+			try {
+				ret = (User)q.getSingleResult();
+			} catch(Exception e){}
 		} catch(Exception e) {
 			LOG.error("An error occurred while checking credentials.", e);
 		}
