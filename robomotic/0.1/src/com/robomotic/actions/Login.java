@@ -13,7 +13,7 @@ import com.robomotic.stores.entities.Administrator;
 import com.robomotic.stores.entities.User;
 
 /**
- * Action to manage esaminatori's login.
+ * Action to manage login.
  *
  * @author Giuseppe Miscione
  *
@@ -39,6 +39,11 @@ public class Login extends GenericAction implements ModelDriven<LoginModel> {
 			User user = us.checkUserCredentials(model.getUsername(), model.getPassword());
 			if(user != null)
 				us.updateLastAccess(user);
+			else {
+				setErrorMessageKey("login.error.wrong.credential");
+				LOG.warn("The provided credentials (" + model.getUsername() +
+					", " + model.getPassword() + ") are not valid");
+			}
 			session.put(userSessionParam, user);
 		}
 
