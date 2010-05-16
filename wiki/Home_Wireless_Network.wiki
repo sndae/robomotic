@@ -63,16 +63,18 @@ sensors: [
 
     {
 
-        name: 'temp',
-
+        id: 12,
+        type: 'temp',
+        location: 'Room A',
         value: 23.45
 
     },
 
     {
 
-        name: 'press',
-
+        id: 12,
+        type: 'press',
+        location: 'Room A',
         value: 1.53
 
     },
