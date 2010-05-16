@@ -99,5 +99,10 @@ http://robomotic.server.com/robomotic/storeData.action
 
 This URL will accept the following parameters:
 
-*public*: The public key of the coordinator
-*nonce*: A progressive number (long) that identifies the request. Each request must have a nonce that is GREATER than the one of the prevoius request in order to avoid replay attacks.
+  * *public*: The public key of the coordinator;
+  * *nonce*: A progressive number (long) that identifies the request. Each request must have a nonce that is GREATER than the one of the prevoius request in order to avoid replay attacks;
+  * *data*: The sensors data formatted as a JSON object according to the format defined in previuos section;
+  * *sign*: The request sign created as _*MD5(public + nonce + data + secret)*_, where + means string concatanation.
+
+As the nonce changes between each call and must be an incremental number, each request will be different, preventing replay attacks, and it will have a different sign.
+Moreover, the secret key, shared between the coordinator and the server, will never be clearly transmitted over the network, so an attacher can very hardly generate a valid sign for a malicious request and the server can be pretty sure that the a request with a correct sign is coming from the coordinator knowing the secret key.
