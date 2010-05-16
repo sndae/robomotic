@@ -73,7 +73,11 @@ public class ConfigLoader implements Serializable {
      * the value is a <code>List&lt;String&gt;</code>.
      */
     public static Map<String, Object> getInstance() {
-    	return getInstance(ServletActionContext.getServletContext());
+    	ServletContext sc = null;
+    	try {
+    		sc = ServletActionContext.getServletContext();
+    	} catch(Exception e){}
+    	return getInstance(sc);
     }
 
     /**

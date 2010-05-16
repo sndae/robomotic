@@ -3,6 +3,11 @@
 	<persistence-unit name="robomotic" transaction-type="RESOURCE_LOCAL">
 		<provider>org.hibernate.ejb.HibernatePersistence</provider>
 		<non-jta-data-source>java:comp/env/jdbc/robomotic</non-jta-data-source>
+		
+		<class>com.robomotic.stores.entities.User</class>
+		<class>com.robomotic.stores.entities.Administrator</class>
+		<exclude-unlisted-classes>true</exclude-unlisted-classes>
+		
 		<properties>
 			<property name="hibernate.show.sql" value="false"/>
 	        <!-- Comment this line after entity generation -->
@@ -11,5 +16,6 @@
 	        <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect" />
 	        <property name="hibernate.connection.autocommit" value="false" />    
         </properties>
+        
 	</persistence-unit>
 </persistence>
