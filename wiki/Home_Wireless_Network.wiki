@@ -85,3 +85,22 @@ sensors: [
 
 }
 }}}
+
+== Coordinator-webservice interschange protocol ==
+
+To allow a secure data exchange between each coordinator and the web application, each coordinator will
+be supplied with a couple of public and secret keys, that will be hexadecimal strings. The public key
+will be used to identify the coordinator and private one will be used to sign the request so that the
+server can be sure of the data origin. The private key will NEVER be transmitted over the net.
+
+The web application will be reacheable through HTTP request. The URL will be something like:
+
+http://robomotic.server.com/robomotic/storeData.action
+
+This URL will accept the following parameters:
+
+{{{
+public: The public key of the coordinator
+nonce: A progressive number (long) that identifies the request. Each request must have a nonce
+that is GREATER than the one of the prevoius request in order to avoid replay attacks.
+}}}
