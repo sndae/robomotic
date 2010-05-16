@@ -52,13 +52,13 @@ struct {
 }}}
 every axis is an 10 bit integer.
 
-== Jason Format ==
-We are using the jason format interchange between the coordinator and the webservice.
+== JSON Format ==
+We are using the JSON format interchange between the coordinator and the webservice.
 The timestamp is a unique increasing long int number.
 
 {{{
-timestamp: 1456789,
 {
+timestamp: 1456789,
 sensors: [
 
     {
