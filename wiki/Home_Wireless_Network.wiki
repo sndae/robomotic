@@ -99,8 +99,6 @@ http://robomotic.server.com/robomotic/storeData.action
 
 This URL will accept the following parameters:
 
-{{{
-public: The public key of the coordinator
-nonce: A progressive number (long) that identifies the request. Each request must have a nonce
+* '''public''': The public key of the coordinator
+* '''nonce''': A progressive number (long) that identifies the request. Each request must have a nonce
 that is GREATER than the one of the prevoius request in order to avoid replay attacks.
-}}}
