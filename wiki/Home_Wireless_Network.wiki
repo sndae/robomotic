@@ -51,3 +51,35 @@ struct {
 } payload;
 }}}
 every axis is an 10 bit integer.
+
+== Jason Format ==
+We are using the jason format interchange between the coordinator and the webservice.
+The timestamp is a unique increasing long int number.
+
+{{{
+timestamp: 1456789,
+{
+sensors: [
+
+    {
+
+        name: 'temp',
+
+        value: 23.45
+
+    },
+
+    {
+
+        name: 'press',
+
+        value: 1.53
+
+    },
+
+    ...
+
+]
+
+}
+}}}
