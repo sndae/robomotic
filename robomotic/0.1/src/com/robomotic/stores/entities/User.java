@@ -4,6 +4,7 @@
 package com.robomotic.stores.entities;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
 
 import javax.persistence.DiscriminatorColumn;
 import javax.persistence.DiscriminatorType;
@@ -39,6 +40,7 @@ public class User implements Serializable {
 	protected String email;
 	protected String name;
 	protected String surname;
+	protected Timestamp lastAccess;
 
 	public User() {
 
@@ -58,6 +60,13 @@ public class User implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	public int getId() {
 		return id;
+	}
+
+	/**
+	 * @return the lastAccess
+	 */
+	public Timestamp getLastAccess() {
+		return lastAccess;
 	}
 
 	/**
@@ -107,6 +116,13 @@ public class User implements Serializable {
 	 */
 	public void setId(int id) {
 		this.id = id;
+	}
+
+	/**
+	 * @param lastAccess the lastAccess to set
+	 */
+	public void setLastAccess(Timestamp lastAccess) {
+		this.lastAccess = lastAccess;
 	}
 
 	/**

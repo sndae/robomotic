@@ -3,6 +3,7 @@
  */
 package com.robomotic.stores;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -110,6 +111,24 @@ public class UserStore extends GenericStore {
 			LOG.error("An error occurred while checking credentials.", e);
 		}
 		return ret;
+	}
+
+	/**
+	 * Updates the user last access information.
+	 *
+	 * @param user the user that will be updated.
+	 */
+	public void updateLastAccess(User user) {
+		user.setLastAccess(new Timestamp(System.currentTimeMillis()));
+		em.getTransaction().begin();
+		try {
+			em.merge(user);
+			em.getTransaction().commit();
+		} catch(Exception e) {
+			LOG.error("An error occurred while updating last access for user \"" +
+				user.getUsername() + "\"", e);
+			em.getTransaction().rollback();
+		}
 	}
 
 }
