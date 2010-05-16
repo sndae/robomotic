@@ -4,7 +4,7 @@
 
 <fmt:setLocale value="${pageLocale}"/>
 
-<fmt:bundle basename="com.robomotic.translation">
+<fmt:bundle basename="i18n.com.robomotic.translation">
 
 <div class="logout">
     <a href="<s:url action="logout" />"><fmt:message key="logout.label" /></a>
