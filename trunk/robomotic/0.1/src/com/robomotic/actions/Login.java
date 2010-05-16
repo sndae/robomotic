@@ -37,6 +37,8 @@ public class Login extends GenericAction implements ModelDriven<LoginModel> {
 		if(model.getUsername() != null && model.getPassword() != null) {
 			UserStore us = new UserStore(getEntityManager());
 			User user = us.checkUserCredentials(model.getUsername(), model.getPassword());
+			if(user != null)
+				us.updateLastAccess(user);
 			session.put(userSessionParam, user);
 		}
 
