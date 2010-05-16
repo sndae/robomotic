@@ -11,7 +11,7 @@
 
 <fmt:setLocale value="${pageLocale}"/>
 
-<fmt:bundle basename="com.robomotic.translation">
+<fmt:bundle basename="i18n.com.robomotic.translation">
 
 <div class="language">
     <ul>

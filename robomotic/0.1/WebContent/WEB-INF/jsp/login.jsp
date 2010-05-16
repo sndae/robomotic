@@ -3,7 +3,7 @@
 <%@ taglib prefix="s"   uri="/struts-tags" %>
 <fmt:setLocale value="${pageLocale}"/>
 
-<fmt:bundle basename="com.robomotic.translation">
+<fmt:bundle basename="i18n.com.robomotic.translation">
 
 <html>
 <c:import url="common/header.jsp" />
