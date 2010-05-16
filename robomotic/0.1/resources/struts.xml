@@ -22,6 +22,7 @@
     </package>
     
     <package name="com.robomotic.actions" namespace="/" extends="struts-robomotic-ext">
+        
         <action name="logout" class="com.robomotic.actions.Logout">
             <result name="success" type="redirectAction">
                 <param name="actionName">login</param>
@@ -34,6 +35,7 @@
                 <param name="actionName">profile</param>
             </result>
             <result name="admin" type="redirectAction">
+                <param name="namespace">/admin</param>
                 <param name="actionName">admin</param>
             </result>
         </action>
@@ -44,9 +46,21 @@
             </result>
             <result name="success">/WEB-INF/jsp/profile.jsp</result>
         </action>
-
-        <action name="admin" class="com.robomotic.actions.Administration">
+        
+    </package>
+    
+    <package name="com.robomotic.actions.admin" namespace="/admin" extends="struts-robomotic-ext">
+    
+        <action name="logout" class="com.robomotic.actions.Logout">
+            <result name="success" type="redirectAction">
+                <param name="namespace">/</param>
+                <param name="actionName">login</param>
+            </result>
+        </action>
+    
+        <action name="admin" class="com.robomotic.actions.admin.Administration">
             <result name="login" type="redirectAction">
+                <param name="namespace">/</param>
                 <param name="actionName">login</param>
             </result>
             <result name="success">/WEB-INF/jsp/admin.jsp</result>
