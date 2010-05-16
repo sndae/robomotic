@@ -1,13 +1,14 @@
 /**
  *
  */
-package com.robomotic.actions;
+package com.robomotic.actions.admin;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import com.opensymphony.xwork2.ModelDriven;
-import com.robomotic.actions.models.AdministrationModel;
+import com.robomotic.actions.GenericAction;
+import com.robomotic.actions.admin.models.AdministrationModel;
 
 /**
  * @author Giuseppe Miscione

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.robomotic.actions.models;
+package com.robomotic.actions.admin.models;
 
 /**
  * @author Giuseppe Miscione
