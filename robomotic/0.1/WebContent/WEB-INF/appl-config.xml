@@ -9,6 +9,7 @@
         <title><![CDATA[Robomotic]]></title>
     
         <lang>
+            <available-langs>it,en</available-langs>
             <default>it</default>
         </lang>
         

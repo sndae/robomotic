@@ -15,8 +15,18 @@
 
 <div class="language">
     <ul>
-        <li><a href="?${basePath}${langParam}=it">IT</a></li>
-        <li><a href="?${basePath}${langParam}=en">EN</a></li>
+        <c:forEach items="${availableLanguages}" var="lang">
+            <li>
+                <c:choose>
+                    <c:when test="${lang == pageLocale}">
+                        <span>${lang}</span>
+                    </c:when>
+	                <c:otherwise>
+	                    <a href="?${basePath}${langParam}=${lang}">${lang}</a>
+	                </c:otherwise>
+                </c:choose>
+            </li>
+        </c:forEach>
     </ul>
 </div>
 
