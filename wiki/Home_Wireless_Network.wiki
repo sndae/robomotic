@@ -54,11 +54,15 @@ every axis is an 10 bit integer.
 
 == JSON Format ==
 We are using the JSON format interchange between the coordinator and the webservice.
+There could be more than 1 coordinator for every network, therefore the field IDNetwork identifies from which network the data was coming from.
 The timestamp is a unique increasing long int number.
 
 {{{
 {
 timestamp: 1456789,
+id: 1,
+type: xbee
+
 sensors: [
 
     {
